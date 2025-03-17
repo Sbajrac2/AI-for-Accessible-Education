@@ -8,7 +8,7 @@ import { toast } from 'sonner';
 import Popup from "@/components/Popup.tsx";
 
 const suggestedTopics = [
-  'Machine Learning Basics',
+  'Natural Language Processing',
   'Web Development',
   'Data Science Fundamentals',
   'JavaScript Frameworks',
