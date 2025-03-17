@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BookOpen, ArrowRight, MessageSquare, Send, X } from 'lucide-react';
 import AnimatedContainer from '../components/AnimatedContainer';
 import SearchInput from '../components/SearchInput';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
-import Popup from '../components/Popup';
+import Popup from "@/components/Popup.tsx";
 
 const suggestedTopics = [
   'Machine Learning Basics',
@@ -17,9 +17,9 @@ const suggestedTopics = [
   'Mobile App Development',
   'Quantum Computing',
   'Digital Marketing',
-  'Blockchain Technology'
+  'Blockchain Technology',
+  'Natural Language Processing'
 ];
-
 
 const TopicSelection = () => {
   const navigate = useNavigate();
@@ -49,6 +49,7 @@ const TopicSelection = () => {
 
 
 // Original search handling
+  // Original search handling
   const handleSearch = (value) => {
     setTopic(value);
   };
@@ -168,7 +169,6 @@ const TopicSelection = () => {
               Chat with Bot
             </button>
           </div>
-
           {/* Popular Topics Section */}
           <AnimatedContainer delay={0.2} className="w-full max-w-3xl mx-auto mt-12">
             <h3 className="text-lg font-medium mb-4 text-center">Popular Topics</h3>
@@ -248,3 +248,4 @@ const TopicSelection = () => {
 };
 
 export default TopicSelection;
+

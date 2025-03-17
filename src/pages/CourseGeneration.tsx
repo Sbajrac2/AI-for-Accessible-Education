@@ -96,55 +96,55 @@ Output:
   };
 
   return (
-    <div className="min-h-[80vh] flex items-center justify-center py-12 px-4">
-      <AnimatedContainer className="w-full max-w-3xl mx-auto">
-        {loading ? (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center">
-            <motion.div
-              animate={{ rotate: 360, transition: { duration: 2, repeat: Infinity, ease: "linear" } }}
-              className="w-16 h-16 mx-auto mb-6 text-primary"
-            >
-              <Sparkles size={64} />
-            </motion.div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-3">Personalizing Your Learning Experience</h2>
-            <p className="text-muted-foreground mb-8 max-w-md mx-auto">{getStageText()}</p>
-            <div className="h-2 bg-muted rounded-full max-w-md mx-auto overflow-hidden">
-              <motion.div initial={{ width: '0%' }} animate={{ width: `${progress}%` }} className="h-full bg-primary rounded-full" />
-            </div>
-          </motion.div>
-        ) : (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center">
-            <div className="w-16 h-16 mx-auto mb-6 text-primary">
-              <Brain size={64} />
-            </div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-3">Your Personalized Course is Ready!</h2>
-            <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-              We've created a custom learning experience for {selectedTopic} based on your preferences.
-            </p>
-            <div className="bg-gray-100 p-4 rounded">
-              <pre className="text-left text-sm whitespace-pre-wrap">{prompt}</pre>
-            </div>
-            {/* Optionally, a button to manually trigger course adaptation */}
-            {/* <button
+      <div className="min-h-[80vh] flex items-center justify-center py-12 px-4">
+        <AnimatedContainer className="w-full max-w-3xl mx-auto">
+          {loading ? (
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center">
+                <motion.div
+                    animate={{ rotate: 360, transition: { duration: 2, repeat: Infinity, ease: "linear" } }}
+                    className="w-16 h-16 mx-auto mb-6 text-primary"
+                >
+                  <Sparkles size={64} />
+                </motion.div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-3">Personalizing Your Learning Experience</h2>
+                <p className="text-muted-foreground mb-8 max-w-md mx-auto">{getStageText()}</p>
+                <div className="h-2 bg-muted rounded-full max-w-md mx-auto overflow-hidden">
+                  <motion.div initial={{ width: '0%' }} animate={{ width: `${progress}%` }} className="h-full bg-primary rounded-full" />
+                </div>
+              </motion.div>
+          ) : (
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center">
+                <div className="w-16 h-16 mx-auto mb-6 text-primary">
+                  <Brain size={64} />
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-3">Your Personalized Course is Ready!</h2>
+                <p className="text-muted-foreground mb-8 max-w-md mx-auto">
+                  We've created a custom learning experience for {selectedTopic} based on your preferences.
+                </p>
+                <div className="bg-gray-100 p-4 rounded">
+                  <pre className="text-left text-sm whitespace-pre-wrap">{prompt}</pre>
+                </div>
+                {/* Optionally, a button to manually trigger course adaptation */}
+                {/* <button
               onClick={handleAdaptCourse}
               className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
             >
               Adapt Course Based on Feedback
             </button> */}
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="mt-8">
-              <p className="text-sm text-muted-foreground mb-4">When you're ready, navigate to your dashboard.</p>
-              {/* Button to navigate manually to the dashboard */}
-              <button
-                onClick={() => navigate('/dashboard')}
-                className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
-              >
-                Go to Dashboard
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatedContainer>
-    </div>
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="mt-8">
+                  <p className="text-sm text-muted-foreground mb-4">When you're ready, navigate to your dashboard.</p>
+                  {/* Button to navigate manually to the dashboard */}
+                  <button
+                      onClick={() => navigate('/nlp-quiz')}
+                      className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+                  >
+                    Continue to NLP Quiz
+                  </button>
+                </motion.div>
+              </motion.div>
+          )}
+        </AnimatedContainer>
+      </div>
   );
 };
 

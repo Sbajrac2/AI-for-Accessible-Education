@@ -18,6 +18,8 @@ import Privacy from "./pages/Privacy";
 import Contact from "./pages/Contact";
 import Help from "./pages/Help";
 import Index from "./pages/Index";
+import NLPQuiz from './pages/NLPQuiz';
+
 
 const queryClient = new QueryClient();
 
@@ -25,18 +27,13 @@ const App = () => {
   const [showSplash, setShowSplash] = useState(() => {
     return !sessionStorage.getItem("hasSeenSplash");
   });
-
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Manage login state
 
   useEffect(() => {
     if (showSplash) {
       sessionStorage.setItem("hasSeenSplash", "true");
     }
   }, [showSplash]);
-
-   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
   return showSplash ? (
       <SplashScreen onComplete={() => setShowSplash(false)} />
   ) : (
@@ -50,6 +47,7 @@ const App = () => {
                 <Route path="/" element={<TopicSelection />} />
                 <Route path="/index" element={<Index />} />
                 <Route path="/personality-test" element={<PersonalityTest />} />
+                <Route path="/nlp-quiz" element={<NLPQuiz />} />
                 <Route path="/course-generation" element={<CourseGeneration />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/module/:moduleId" element={<ModulePage />} />
@@ -69,4 +67,3 @@ const App = () => {
 };
 
 export default App;
-
